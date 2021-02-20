@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+<label for="red">red
+<input id="red" name="red" type="range" min="0" max="255" step="1" value=50>
+</label>
+<label for="green">green
+<input id="green" name="green" type="range" min="0" max="255" step="1" value=50>
+    </label>
+<label for="blue">blue
+<input id="blue" name="blue" type="range" min="0" max="255" step="1" value=50>
+    </label>
+<div>
+    <button id="changeBgColor">ChangeBgColor</button>
+    <button id="changeTextColor">ChangeTextColor</button>
+</div>
+<div id="block">
+    <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, ipsum.</p>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(document).ready(function(){
+        let red = 50
+        let green = 50
+        let blue = 50
+        $("input").on("change", function(evt){
+            switch (evt.target.id) {
+                case 'red':
+                    red = this.value;
+                    return red
+                    break
+                case 'blue':
+                    blue = this.value;
+                    return blue
+                    break
+                case 'green':
+                    green = this.value;
+                    return green
+                    break
+            }
+        });
+        $("#changeBgColor").on("click", function(){
+            let color = 'rgb(' + red + ',' + green + ',' + blue + ')'
+            $("#block").css("background", color)
+        });
+        $("#changeTextColor").on("click", function(){
+            let color = 'rgb(' + red + ',' + green + ',' + blue + ')'
+            $("#text").css("color", color)
+        });
+    });
+</script>
+</body>
+<style>
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    #red {
+        color: red;
+    }
+
+    #green {
+        color: green;
+    }
+
+    #blue {
+        color: blue;
+    }
+
+    #block {
+        width: 200px;
+        height: 200px;
+        outline: 1px solid black;
+    }
+</style>
+</html>
