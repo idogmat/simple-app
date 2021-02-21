@@ -66,18 +66,78 @@
         display: flex;
         flex-direction: column;
     }
-    #red {
-        color: red;
+    #red[type='range'] {
+        overflow: hidden;
+        outline: 1px solid black;
+        width: 80px;
+        -webkit-appearance: none;
+        background-color: white;
     }
 
-    #green {
-        color: green;
+    #red[type='range']::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        outline: 1px solid black;
+        margin-top: -1px;
     }
 
-    #blue {
-        color: blue;
+    #red[type='range']::-webkit-slider-thumb {
+        cursor: pointer;
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        outline: 2px solid black;
+        background: white;
+        box-shadow: -80px 0 0 80px red;
+    }
+    #green[type='range'] {
+        overflow: hidden;
+        outline: 1px solid black;
+        width: 80px;
+        -webkit-appearance: none;
+        background-color: white;
     }
 
+    #green[type='range']::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        outline: 1px solid black;
+        margin-top: -1px;
+    }
+
+    #green[type='range']::-webkit-slider-thumb {
+        cursor: pointer;
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        outline: 2px solid black;
+        background: white;
+        box-shadow: -80px 0 0 80px green;
+    }
+    #blue[type='range'] {
+        overflow: hidden;
+        outline: 1px solid black;
+        width: 80px;
+        -webkit-appearance: none;
+        background-color: white;
+    }
+
+    #blue[type='range']::-webkit-slider-runnable-track {
+        height: 10px;
+        -webkit-appearance: none;
+        outline: 1px solid black;
+        margin-top: -1px;
+    }
+
+    #blue[type='range']::-webkit-slider-thumb {
+        cursor: pointer;
+        width: 10px;
+        -webkit-appearance: none;
+        height: 10px;
+        outline: 2px solid black;
+        background: white;
+        box-shadow: -80px 0 0 80px blue;
+    }
     #block {
         width: 200px;
         height: 200px;
